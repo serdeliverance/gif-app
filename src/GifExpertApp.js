@@ -1,28 +1,25 @@
 import { Fragment, useState } from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GifGrid } from './components/GifGrid'
 
 
 export const GifExpertApp = () => {
 
-    const [categories, setGategories] = useState(['One Punch', 'Samurai X', ' Dragon Ball'])
-
-    // const handleAdd = () => {
-    //     // setCategories( [...categories, 'HunterXHunter'] )    // other way
-    //     // setGategories(() => categories.concat('HunterXHunter')) // other way
-    //     setCategories( cats => [...cats, 'HunterXHunter'] ) 
-    // }
+    const [categories, setCategories] = useState(['One Punch'])
 
     return (
         <Fragment>
             <h2>GitExpertApp</h2>
-            <AddCategory />
+            <AddCategory setCategories={setCategories}/>
             <hr />
 
             <ol>
                 { 
-                    categories.map(category => {
-                        return <li key={category}>{category}</li>
-                    }) 
+                    categories.map(category =>
+                        <GifGrid 
+                            key={ category }
+                            category={ category } />
+                    ) 
                 }
             </ol>
         </Fragment>
