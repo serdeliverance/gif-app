@@ -2,7 +2,7 @@
 const gitUrl = 'http://api.giphy.com/v1/gifs'
 
 // TODO externalize property
-const apiKey = 'IBN0Asliz77L2xVsqUJeL17AYOfT6cFg'
+const apiKey = 'someApiKey'
 
 export const getGifs = async category => {
   // TODO refactor hardcoded url query params
